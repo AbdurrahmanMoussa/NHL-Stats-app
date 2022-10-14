@@ -25,9 +25,9 @@ const CareerStatsFilteredData = (props) => {
             .filter((value) => {
               return value.league.name.toString() === props.selected.toString();
             })
-            .map((playerStat) => {
+            .map((playerStat, idx) => {
               return (
-                <tr>
+                <tr key={idx}>
                   <td>
                     {playerStat.season.slice(0, 4) +
                       "-" +
@@ -44,7 +44,7 @@ const CareerStatsFilteredData = (props) => {
                   <td>{playerStat.stat.pim ? playerStat.stat.pim : 0}</td>
                   <td>{playerStat.stat.shots ? playerStat.stat.shots : 0}</td>
                   <td>
-                    {playerStat.stat.timeOnIce
+                    {playerStat.stat.timeOnIce > 0
                       ? Math.round(
                           parseInt(playerStat.stat.timeOnIce) /
                             parseInt(playerStat.stat.games)

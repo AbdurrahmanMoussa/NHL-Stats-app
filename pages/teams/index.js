@@ -17,7 +17,7 @@ export default function Teams(props) {
 
 export async function getStaticProps() {
   let arr = [];
-  const allTeams = await fetch("https://statsapi.web.nhl.com/api/v1/teams/")
+  await fetch("https://statsapi.web.nhl.com/api/v1/teams/")
     .then((response) => response.json())
     .then((data) => {
       for (let i = 0; i < data.teams.length; i++) {

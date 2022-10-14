@@ -21,9 +21,9 @@ const CareerStatsList = (props) => {
         </thead>
         <tbody>
           {/* mapping all relevant player data to table */}
-          {props.data.map((playerStat) => {
+          {props.data.map((playerStat, idx) => {
             return (
-              <tr>
+              <tr key={idx}>
                 {/* formats the season value with hyphen */}
                 <td>
                   {playerStat.season.slice(0, 4) +
@@ -41,7 +41,7 @@ const CareerStatsList = (props) => {
                 <td>{playerStat.stat.shots ? playerStat.stat.shots : 0}</td>
                 <td>
                   {/* formatting timeOnIce by displaying TOI per game rather than total TOI*/}
-                  {playerStat.stat.timeOnIce
+                  {playerStat.stat.timeOnIce > 0
                     ? Math.round(
                         parseInt(playerStat.stat.timeOnIce) /
                           parseInt(playerStat.stat.games)

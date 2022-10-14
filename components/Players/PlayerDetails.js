@@ -38,9 +38,7 @@ export default function PlayerDetails(props) {
   } else {
     playerInfo[0].shoots = "Right";
   }
-  {
-    console.log(props.playerInfo);
-  }
+
   return (
     <Fragment>
       <PlayerImageCard>
@@ -48,7 +46,7 @@ export default function PlayerDetails(props) {
           <ImageFallback
             src={backGroundImage}
             fallbackSrc={backgroundImageFallBack}
-            alt="/"
+            alt="background image"
             width="1200"
             height="300"
             priority
@@ -58,6 +56,7 @@ export default function PlayerDetails(props) {
 
         <div className={styles.player}>
           <ImageFallback
+            alt="player image"
             src={image}
             fallbackSrc={backupPlayerImage}
             width="400"
@@ -100,7 +99,6 @@ export default function PlayerDetails(props) {
       </PlayerImageCard>
 
       <PlayerStatsCard>
-        {/* {<p className={styles.head}>{playerInfo[0].name} Career Stats</p>} */}
         <PlayerStats key={uuid()} data={props.playerStats} />
       </PlayerStatsCard>
       <a href={`/teams/${id}/roster`} className={styles.link}>

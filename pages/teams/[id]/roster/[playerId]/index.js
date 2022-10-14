@@ -7,7 +7,6 @@ export default function PlayerDetail(props) {
   const { fetchData: playerStats, handlePlayerStats } = useHttp();
 
   useEffect(() => {
-    console.log("use effect running");
     handlePlayerStats(
       `https://statsapi.web.nhl.com/api/v1/people/${props.playerId}/stats/?stats=yearByYear`
     );

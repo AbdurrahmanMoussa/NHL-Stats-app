@@ -29,6 +29,7 @@ function TeamItem(props) {
             {teamInfo["0"] && (
               <ImageFallback
                 className={classes.image}
+                alt="logo"
                 src={backUpLogo}
                 fallbackSrc={teamInfo["0"].logo}
                 width="200"

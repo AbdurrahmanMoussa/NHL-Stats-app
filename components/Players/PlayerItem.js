@@ -18,6 +18,7 @@ function PlayerItem(props) {
       <Card>
         <div className={styles.content}>
           <ImageFallback
+            alt={"player image"}
             src={props.image}
             //if there is an error retrieving props.image, it sets target to the backup image
             fallbackSrc={backUpImage}

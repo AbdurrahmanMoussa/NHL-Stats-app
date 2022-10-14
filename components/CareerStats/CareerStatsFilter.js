@@ -32,9 +32,11 @@ const CareerStatsFilter = (props) => {
                   value.league.name.toString() === other.league.name.toString()
               )
           )
-          .map((season) => {
+          .map((season, idx) => {
             return (
-              <option value={props.selected.value}>{season.league.name}</option>
+              <option key={idx} value={props.selected.value}>
+                {season.league.name}
+              </option>
             );
           })}
       </select>

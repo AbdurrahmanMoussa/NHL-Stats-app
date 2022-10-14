@@ -10,6 +10,7 @@ export default function ImageFallback({ src, fallbackSrc, ...rest }) {
 
   return (
     <Image
+      alt="image"
       {...rest}
       src={imgSrc}
       onLoadingComplete={(result) => {
