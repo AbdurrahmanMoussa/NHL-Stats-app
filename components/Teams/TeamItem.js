@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-import Card from "../ui/Card";
+import Card from "../UI/Card";
 import ImageFallback from "../UI/ImageWithFallback";
 import styles from "./TeamItem.module.css";
 
