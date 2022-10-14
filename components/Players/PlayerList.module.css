@@ -1,0 +1,31 @@
+.head{
+    color: #000000; 
+    margin-bottom: 2rem; 
+    text-align: center;
+}
+
+.error{
+    color: #ffffff; 
+    font-size: large; 
+    font-weight: bold; 
+    margin-top: 2rem; 
+    padding: 1rem;
+    background-color: #000000;
+    border-radius: 1rem;
+    box-shadow: 0 1px 1px 2px rgb(45, 45, 48);
+}
+
+.link{
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.link:hover{
+    background-color: rgb(219, 202, 202);
+    color: #000000;
+
+}
