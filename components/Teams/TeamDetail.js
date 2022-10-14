@@ -1,6 +1,6 @@
 import { useState } from "react";
-import classes from "./TeamDetail.module.css";
-import Card from "../ui/Card";
+import styles from "./TeamDetail.module.css";
+import Card from "../UI/Card";
 import { useRouter } from "next/router";
 import ImageFallback from "../UI/ImageWithFallback";
 
@@ -68,14 +68,14 @@ function TeamDetail(props) {
   }
 
   return (
-    <Card className={classes.detail}>
-      <div className={classes.container}>
-        <h1 className={classes.header}>{name}</h1>
-        <div className={classes.image}>
+    <Card className={styles.detail}>
+      <div className={styles.container}>
+        <h1 className={styles.header}>{name}</h1>
+        <div className={styles.image}>
           {/* displaying logo if team exists */}
           {teamInfo[0] && (
             <ImageFallback
-              className={classes.image}
+              className={styles.image}
               src={teamInfo[0].logo}
               fallbackSrc={backUpLogo}
               width="170"
@@ -83,34 +83,34 @@ function TeamDetail(props) {
             />
           )}
         </div>
-        <div className={classes.created}>
+        <div className={styles.created}>
           <h2>Abrreviation</h2>
           <p>{abbrev}</p>
         </div>
-        <div className={classes.created}>
+        <div className={styles.created}>
           <h2>Division</h2>
           <p>{division.name}</p>
         </div>
-        <div className={classes.created}>
+        <div className={styles.created}>
           <h2>Conference</h2>
           <p>{conference.name}</p>
         </div>
-        <div className={classes.created}>
+        <div className={styles.created}>
           <h2>Created</h2>
           <p>{year}</p>
         </div>
-        <div className={classes.created}>
+        <div className={styles.created}>
           <h2>Venue</h2>
           <p>{venue.name}</p>
         </div>
-        <div className={classes.buttons}>
+        <div className={styles.buttons}>
           <button
             onClick={showRostersHandler}
             style={{
               //assigning dynamic background color which was set dynamically earlier to backGroundColor
               backgroundColor: setBackGroundColor,
             }}
-            className={classes.actions}
+            className={styles.actions}
             //handling hovering actions to display dynamic background color on button
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
