@@ -4,6 +4,7 @@ import useHttp from "../../hooks/use-http";
 import { seasonOptions } from "../../util/SeasonOptions";
 import { useState } from "react";
 import Select from "react-select";
+import uuid from "react-uuid";
 
 const PlayerGamelogs = () => {
   const [select, setSelect] = useState([]);
@@ -51,7 +52,7 @@ const PlayerGamelogs = () => {
       />
       <table className={styles.content}>
         <thead>
-          <tr>
+          <tr key={uuid()}>
             <th>Date</th>
             <th>Team</th>
             {/* Goals */}
@@ -80,9 +81,9 @@ const PlayerGamelogs = () => {
         <tbody>
           {/* mapping gamelogs for season which was selected and retrieving relevant data */}
           {gamelogs.length > 0
-            ? gamelogs.map((gamelog) => {
+            ? gamelogs.map((gamelog, idx) => {
                 return (
-                  <tr>
+                  <tr key={uuid()}>
                     <td>{gamelog.date}</td>
                     {/* if a team was the home team vs will  be displayed otherwise @ will be displayed which represents away team */}
                     <td>{`${!gamelog.isHome ? "@ " : "vs "}${
