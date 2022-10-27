@@ -8,24 +8,43 @@
     color: #ffffff; 
     font-size: large; 
     font-weight: bold; 
-    margin-top: 2rem; 
     padding: 1rem;
     background-color: #000000;
     border-radius: 1rem;
     box-shadow: 0 1px 1px 2px rgb(45, 45, 48);
+    margin-bottom: 2rem;
+    width: 55%;
 }
 
 .link{
+    display: flex;
+    justify-content: center;
     text-decoration: none;
     border-radius: 10px;
     padding: 1rem;
     background-color: #000000;
     color: #ffffff;
     font-weight: bold;
+    align-items: flex-end;
+    width: 30%;
+    box-shadow: 0 1px 1px 2px rgb(45, 45, 48);
 }
 
 .link:hover{
     background-color: rgb(219, 202, 202);
     color: #000000;
+    box-shadow: 0 1px 1px 2px rgb(183, 183, 191);
+
+}
+
+.select{
+    width: 90%;
+    margin: 1rem;
+    padding: 1rem;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 
 }

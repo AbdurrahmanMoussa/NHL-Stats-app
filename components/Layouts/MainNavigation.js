@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "./MainNavigation.module.css";
-
+import Search from "../Teams/Search";
 function MainNavigation() {
   const router = useRouter();
   const { id, playerId } = router.query;
+
   return (
     <header className={styles.header}>
       <Link className={styles.logo} href="/teams">

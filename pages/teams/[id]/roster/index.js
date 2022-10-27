@@ -5,6 +5,7 @@ import { useState } from "react";
 import Select from "react-select";
 import { seasonOptions } from "../../../../util/SeasonOptions";
 import useHttp from "../../../../hooks/use-http";
+import styles from "../../../../components/Players/PlayerList.module.css";
 
 export default function Players(props) {
   const [select, setSelect] = useState([]);
@@ -34,6 +35,7 @@ export default function Players(props) {
         autoFocus
         value={select.value}
         onChange={handler}
+        className={styles.select}
       />
 
       {/* displays player list only after data has been fetched*/}

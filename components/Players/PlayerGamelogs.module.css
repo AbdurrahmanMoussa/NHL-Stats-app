@@ -41,13 +41,9 @@
 
 @media(max-width: 790px){
    .content {
-
     max-width: 100%;
     overflow: hidden;} 
-   .content, .content tbody, .content tr, .content td{ 
-    
-    width: 100%;
-   }
+  
 }
 
 .error{
@@ -60,3 +56,15 @@
 }
 
 .content tr:hover td{background-color:rgb(191, 218, 234);}
+
+.select{
+    width: 90%;
+    margin: 1rem;
+    padding: 1rem;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+}

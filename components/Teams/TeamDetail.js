@@ -62,9 +62,13 @@ function TeamDetail(props) {
     /* setting background color of {team} button based on hovering actions */
   }
   if (!isHovering && teamInfo[0]) {
-    setBackGroundColor = teamInfo[0].colors["0"];
+    setBackGroundColor = teamInfo[0]?.colors["0"];
   } else if (isHovering && teamInfo[0]) {
-    setBackGroundColor = teamInfo[0].colors["2"];
+    if (teamInfo[0]?.colors["1"] === "#FFF") {
+      setBackGroundColor = "#000000";
+    } else {
+      setBackGroundColor = teamInfo[0]?.colors["1"];
+    }
   }
 
   return (
@@ -89,11 +93,12 @@ function TeamDetail(props) {
         </div>
         <div className={styles.created}>
           <h2>Division</h2>
-          <p>{division.name}</p>
+
+          <p>{division?.name}</p>
         </div>
         <div className={styles.created}>
           <h2>Conference</h2>
-          <p>{conference.name}</p>
+          <p>{conference?.name}</p>
         </div>
         <div className={styles.created}>
           <h2>Created</h2>
@@ -101,7 +106,7 @@ function TeamDetail(props) {
         </div>
         <div className={styles.created}>
           <h2>Venue</h2>
-          <p>{venue.name}</p>
+          <p>{venue?.name}</p>
         </div>
         <div className={styles.buttons}>
           <button

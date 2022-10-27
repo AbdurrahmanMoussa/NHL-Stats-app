@@ -49,6 +49,7 @@ const PlayerGamelogs = () => {
         autoFocus
         value={select.value}
         onChange={handler}
+        className={styles.select}
       />
       <table className={styles.content}>
         <thead>

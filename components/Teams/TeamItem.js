@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
-
 import Card from "../UI/Card";
 import ImageFallback from "../UI/ImageWithFallback";
 import styles from "./TeamItem.module.css";
+import Search from "./Search";
 
 function TeamItem(props) {
   const router = useRouter();
@@ -20,31 +20,33 @@ function TeamItem(props) {
   );
 
   return (
-    <li className={styles.item}>
-      <Card>
-        <div className={styles.container}>
-          <h1 className={styles.title}>{props.name}</h1>
-          <div>
-            {/* displaying team if team exists and handling error if image wasn't found and setting it to the backup */}
-            {teamInfo["0"] && (
-              <ImageFallback
-                className={styles.image}
-                alt="logo"
-                src={backUpLogo}
-                fallbackSrc={teamInfo["0"].logo}
-                width="200"
-                height="200"
-                objectFit="contained"
-              />
-            )}
+    <>
+      <li className={styles.item}>
+        <Card>
+          <div className={styles.container}>
+            <h1 className={styles.title}>{props.name}</h1>
+            <div>
+              {/* displaying team if team exists and handling error if image wasn't found and setting it to the backup */}
+              {teamInfo["0"] && (
+                <ImageFallback
+                  className={styles.image}
+                  alt="logo"
+                  src={backUpLogo}
+                  fallbackSrc={teamInfo["0"].logo}
+                  width="200"
+                  height="200"
+                  objectFit="contained"
+                />
+              )}
+            </div>
+            {/* routes to specified team through /teams/[id] */}
+            <button onClick={showDetailsHandler} className={styles.actions}>
+              Show Details
+            </button>
           </div>
-          {/* routes to specified team through /teams/[id] */}
-          <button onClick={showDetailsHandler} className={styles.actions}>
-            Show Details
-          </button>
-        </div>
-      </Card>
-    </li>
+        </Card>
+      </li>
+    </>
   );
 }
 

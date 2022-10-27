@@ -9,7 +9,10 @@ const useHttp = () => {
   const handlePlayerList = async (url) => {
     try {
       const req = await fetch(url).then((response) => response.json());
+      console.log(req);
+      let sort = null;
 
+      console.log(sort);
       setFetchedData(req);
     } catch (error) {
       console.log(error);
